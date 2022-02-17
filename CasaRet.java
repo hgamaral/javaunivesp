@@ -7,7 +7,7 @@ de 3 comodos: sala (10x10), banheiro e quarto (5x7)
 		System.out.println("A AREA DA SALA E" + 10*10);
 		System.out.println("AREA DO QUARTO E" + 5*7);
 		System.out.println("A AREA DO BANHEIRO E" + 5*7);
-		System.out.println("A AREA TOTAL E" + (10*10 + 5*7 + 5*7));
+		System.out.println("Area da casa total" + (10*10 + 5*7 + 5*7));
 	}
 }
 //o simbolo de mais é adicionado para CONCATENAR informacoes
