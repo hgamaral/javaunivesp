@@ -15,9 +15,8 @@ area piscina é pi x raio ao quadrado
 		
 
 		areap = pi * raio *raio;
-		System.out.println("Area da pisicina e  " + areap);
+		System.out.println("A area da pisicina e  " + areap);
 
 		
-
 	}
 }
