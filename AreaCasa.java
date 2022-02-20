@@ -1,20 +1,19 @@
 /*
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
-Foram inseridos 2 métodos: 
+Foram inseridos nos metodos PARAMETROS - o metodos agora deve receber um valor (ARGUMENTO) em seu parametro 
+
 static void areaCasa(); o VOID no método significa que não irá retornar valor algum, apenas irá executar a tarefa e terminar
 
-static double areaPiscina; o DOUBLE no método indica um valor do tipo double
+static double areaPiscina (double raio); onde double raio é igual a 2
 return no método é quando o valor é efetivamente retornado
 
 */	
 								
 class AreaCasa{
 		
-	static void areaCasa(){		//criação do método. void indica que nao ha retorno	
+	static void areaCasa(float lateral, float cquarto){	//método com dois argumentos, float lateral, cquarto	
 
-		float lateral = 11; //variavel tipo float com valor atribuido de 11
-		float cquarto = 7; //variavel tipo float com valor atribuido de 7
 		float areaq; //variavel tipo float sem valor atribuido
 		float areas; //variavel tipo float sem valor atribuido
 		float areat; //variavel tipo float sem valor atribuido
@@ -34,10 +33,7 @@ class AreaCasa{
 		}
 		
 
-		static double areaPiscina(){ //criaco do metodo, com retorno tipo double 		
-		
-		double raio = 2; //criacao da variavel raio do tipo double com valor atribuido de 2
-
+		static double areaPiscina(double raio){ //criaco do metodo, com retorno tipo double raio		
 		return(Math.PI * Math.pow(raio,2));
 		
 		}
@@ -46,13 +42,10 @@ class AreaCasa{
 	
 		public static void main (String[] args) {	
 
-		areaCasa(); //chama o método com todo as váriaveis e implementações que ele possui
-		
-		double areap; //criação da váriavel sem atribuição referente a area da piscina
+		double areap;
+		areaCasa(11,7);
+		areap = areaPiscina(2);
 
-		areap = areaPiscina();
-
-	
 		System.out.println("Area da piscina e: " + areap);
 		
 
