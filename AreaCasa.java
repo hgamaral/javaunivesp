@@ -1,18 +1,20 @@
 /*
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
-Foram inseridos nos metodos PARAMETROS - o metodos agora deve receber um valor (ARGUMENTO) em seu parametro 
 
-static void areaCasa(); o VOID no método significa que não irá retornar valor algum, apenas irá executar a tarefa e terminar
-
-static double areaPiscina (double raio); onde double raio é igual a 2
-return no método é quando o valor é efetivamente retornado
+Nessa parte do nosso programa iremos inserir ATRIBUTOS para saber o valor R$ da construção
+Algo que em softwares gerais, estaria em algum menu "Opções, "Setup" etc
+Para facilitar esse programa declaramos fora de qualquer método no programa, deixamos váriavel para
+que se permita mudanças
 
 */	
 								
 class AreaCasa{
+	
+		static double valorM2 = 1500; //valor do metro quadrado
 		
-	static void areaCasa(float lateral, float cquarto){	//método com dois argumentos, float lateral, cquarto	
+
+		static void areaCasa(float lateral, float cquarto){	//método com dois argumentos, float lateral, cquarto	
 
 		float areaq; //variavel tipo float sem valor atribuido
 		float areas; //variavel tipo float sem valor atribuido
@@ -29,7 +31,6 @@ class AreaCasa{
 
 		areat= areas +2*areaq;
 		System.out.println("Area total:" + areat);
-		
 		}
 		
 
@@ -38,15 +39,22 @@ class AreaCasa{
 		
 		}
 		
-		
+		static double valor(double area){
+		return(valorM2*area);
+		}
 	
 		public static void main (String[] args) {	
 
 		double areap;
 		areaCasa(11,7);
+		
+		
+		valorMetro = valor(198);
+		
 		areap = areaPiscina(2);
 
 		System.out.println("Area da piscina e: " + areap);
+		
 		
 
 	}		
