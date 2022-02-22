@@ -6,7 +6,7 @@ Nessa parte do nosso programa iremos testar os parâmetros
 
 SE o parâmetro for positivo ENTÃO calcule a área;
 SENÃO retorne um valor indicado erro (exemplo retorna -1)
-USANDO IF E ELSE
+USANDO SOMENTE IF 
 
 PONTOS DE ATENÇÃO: não há código após o RETURN. Nesse caso há devido
 ao condicional, porque não há como dizer antemão se haverá o retorno.
