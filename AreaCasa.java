@@ -3,13 +3,12 @@
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
 Nessa parte do nosso programa iremos testar os parâmetros
+utilizando váriaveis do tipo BOOLEAN, que são variáveis que armazenam
+apenas dois valores: verdadeiro (true) - falso (false) - padrão
 
-SE o parâmetro for positivo ENTÃO calcule a área;
-SENÃO retorne um valor indicado erro (exemplo retorna -1)
-USANDO SOMENTE IF 
 
-PONTOS DE ATENÇÃO: não há código após o RETURN. Nesse caso há devido
-ao condicional, porque não há como dizer antemão se haverá o retorno.
+PONTOS DE ATENÇÃO: a variavel booleana utiliza é a variavel ValorOK
+no caso ela faz comparação se o argumento -20 no metodo é maior ou menor que 0
 
 */
 class AreaCasa {
@@ -17,7 +16,7 @@ class AreaCasa {
     static double valorM2 = 1500; //valor do metro quadrado
 
 
-    static void areaCasa(float lateral, float cquarto) { //método com dois argumentos, float 			lateral, cquarto	
+    static void areaCasa(float lateral, float cquarto) { //método com dois argumentos, float lateral, cquarto	
 
         float areaq;
         float areas;
@@ -43,31 +42,35 @@ class AreaCasa {
     }
 
     static double valor(double area) {
-        if (area >= 0) 
+        if (area >= 0)
             return (valorM2 * area);
-            return (-1);
+        return (-1);
 
-        }
-
-        public static void main(String[] args) {
-
-            double areap;
-
-            areaCasa(11, 7);
-
-            double preco;
-
-            areap = areaPiscina(2);
-
-            System.out.println("Area da piscina e: " + areap);
-
-            preco = valor(-20);
-            if (preco >= 0)
-                System.out.println("O valor da construção e " + preco);
-            else
-                System.out.println("Valor de area negativo: ");
-
-
-
-        }
     }
+
+    public static void main(String[] args) {
+
+        double areap;
+
+        areaCasa(11, 7);
+
+        double preco;
+        boolean valorOK = false;
+
+        areap = areaPiscina(2);
+
+        System.out.println("Area da piscina e: " + areap);
+
+        preco = valor(-20);
+        valorOK = preco >= 0;
+
+
+        if (valorOK) 
+			System.out.println("O valor da construção e " + preco);
+        else 
+			System.out.println("Valor de area negativo");
+
+
+
+    }
+}
