@@ -2,13 +2,12 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos testar os parâmetros
-utilizando váriaveis do tipo BOOLEAN, que são variáveis que armazenam
-apenas dois valores: verdadeiro (true) - falso (false) - padrão
+Nessa parte do nosso programa iremos testar IFS ANINHADOS E OPERADORES LÓGICOS
 
 
-PONTOS DE ATENÇÃO: a variavel booleana utiliza é a variavel ValorOK
-no caso ela faz comparação se o argumento -20 no metodo é maior ou menor que 0
+
+PONTOS DE ATENÇÃO: IDENTAÇÃO
+E 
 
 */
 class AreaCasa {
@@ -16,23 +15,39 @@ class AreaCasa {
     static double valorM2 = 1500; //valor do metro quadrado
 
 
-    static void areaCasa(float lateral, float cquarto) { //método com dois argumentos, float lateral, cquarto	
+    static void areaCasa(float lateral, float cquarto) { //método com dois argumentos
 
         float areaq;
         float areas;
-        float areat; //variavel tipo float sem valor atribuido
+        float areat;
 
-        System.out.println("PROGRAMA PARA CASA DA AREA DA CASA RETANGULAR");
+        if (lateral < 0)
 
-        areas = lateral * lateral;
-        System.out.println("Area da sala e:" + areas);
+            System.out.println("Erro lateral da sala é menor que 0");
 
-        areaq = cquarto * (lateral / 2);
-        System.out.println("Area do quarto e:" + areaq);
-        System.out.println("Area do quarto e:" + areaq);
+        else {
 
-        areat = areas + 2 * areaq;
-        System.out.println("Area total:" + areat);
+            if (cquarto < 0)
+
+                System.out.println("Erro lateral do quarto menor que 0");
+
+            else {
+
+
+
+                System.out.println("PROGRAMA PARA CASA DA AREA DA CASA RETANGULAR");
+
+                areas = lateral * lateral;
+                System.out.println("Area da sala e:" + areas);
+
+                areaq = cquarto * (lateral / 2);
+                System.out.println("Area do quarto e:" + areaq);
+                System.out.println("Area do quarto e:" + areaq);
+
+                areat = areas + 2 * areaq;
+                System.out.println("Area total:" + areat);
+            }
+        }
     }
 
 
@@ -65,10 +80,10 @@ class AreaCasa {
         valorOK = preco >= 0;
 
 
-        if (valorOK) 
-			System.out.println("O valor da construção e " + preco);
-        else 
-			System.out.println("Valor de area negativo");
+        if (valorOK)
+            System.out.println("O valor da construção e " + preco);
+        else
+            System.out.println("Valor de area negativo");
 
 
 
