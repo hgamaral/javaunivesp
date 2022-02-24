@@ -76,7 +76,7 @@ class AreaCasa {
 
         System.out.println("Area da piscina e: " + areap);
 
-        preco = valor(-20);
+        preco = valor(20);
         valorOK = preco >= 0;
 
 
