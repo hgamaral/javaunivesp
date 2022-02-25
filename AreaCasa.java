@@ -2,14 +2,13 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos testar OPERADOR ? "ATALHO" PARA CONDIÇÕE
-LEIA-SE If (condição) var recebe expressao 1;
-	   else var = expressao 2;
+Nessa parte do nosso programa iremos inserir 4 materiais para construção da piscina.
+Irá ser utilizado o elemento SWITH dentro do NOVO método valorPiscina para análise do 
+material que será utilizado para construção da piscina.
 
 
 
-PONTOS DE ATENÇÃO: NESSE CASO O OPERADOR ? sera inserido no metodo areaPiscina
-se raio for maior 0 primeira condição, caso contrario retorno -1
+PONTOS DE ATENÇÃO: default é o opcional
 
 */
 class AreaCasa {
@@ -41,7 +40,6 @@ class AreaCasa {
 
         else {
 
-            if (cquarto < 0)
 
                 System.out.println("Erro lateral do quarto menor que 0");
 
@@ -49,6 +47,30 @@ class AreaCasa {
             }
     }
 
+
+		static final int ALVENARIA = 0;
+		static final int VINIL = 1;
+		static final int FIBRA = 2;
+		static final int PLASTICO = 3;
+		
+		
+	static double valorPiscina(double area, int material){
+			double valor=0;
+			switch (material){
+				case ALVENARIA: valor = 1500;
+								break;
+				case VINIL: valor = 1100;
+								break;
+				case FIBRA: valor = 750;
+								break;
+				case PLASTICO: valor = 500;
+								break;
+				default: valor = -1;
+			}
+			return (area*valor);
+			}
+								
+					
 
     static double areaPiscina(double raio) { //criaco do metodo, com retorno tipo double raio
 	   double resp; //criacao da variavel resp do tipo double para verificar a condicao 		
@@ -85,6 +107,8 @@ class AreaCasa {
             System.out.println("O valor da construção e " + preco);
         else
             System.out.println("Valor de area negativo");
+		
+		System.out.println("O valor para construção da piscina e: " + valorPiscina(100,3));
 
 
 
