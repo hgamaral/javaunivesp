@@ -2,15 +2,14 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos testar OPERADORES LÓGICOS para testar as condições no método areaCASA
+Nessa parte do nosso programa iremos testar OPERADOR ? "ATALHO" PARA CONDIÇÕE
+LEIA-SE If (condição) var recebe expressao 1;
+	   else var = expressao 2;
 
 
 
-PONTOS DE ATENÇÃO: O método irá executar o codigo somente se lateral >= 0 e cquarto >= 0 (&&) para duas condições verdadeiras - operador lógico and if (lateral>0 && cquart>0)
-
-Se não for verdade lateral >=0 e c quarto >=0, em java if (!(lateral>=0 && cquarto>0))
-
-NESSE CASO O OPERADOR LOGICO && no metodo areaCasa
+PONTOS DE ATENÇÃO: NESSE CASO O OPERADOR ? sera inserido no metodo areaPiscina
+se raio for maior 0 primeira condição, caso contrario retorno -1
 
 */
 class AreaCasa {
@@ -51,8 +50,10 @@ class AreaCasa {
     }
 
 
-    static double areaPiscina(double raio) { //criaco do metodo, com retorno tipo double raio		
-        return (Math.PI * Math.pow(raio, 2));
+    static double areaPiscina(double raio) { //criaco do metodo, com retorno tipo double raio
+	   double resp; //criacao da variavel resp do tipo double para verificar a condicao 		
+        resp = (raio >=0) ? Math.PI * Math.pow(raio, 2) : -1;
+	   return (resp);
 
     }
 
