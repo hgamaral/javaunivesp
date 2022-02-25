@@ -2,12 +2,15 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos testar IFS ANINHADOS E OPERADORES LÓGICOS
+Nessa parte do nosso programa iremos testar OPERADORES LÓGICOS para testar as condições no método areaCASA
 
 
 
-PONTOS DE ATENÇÃO: IDENTAÇÃO
-E 
+PONTOS DE ATENÇÃO: O método irá executar o codigo somente se lateral >= 0 e cquarto >= 0 (&&) para duas condições verdadeiras - operador lógico and if (lateral>0 && cquart>0)
+
+Se não for verdade lateral >=0 e c quarto >=0, em java if (!(lateral>=0 && cquarto>0))
+
+NESSE CASO O OPERADOR LOGICO && no metodo areaCasa
 
 */
 class AreaCasa {
@@ -21,21 +24,9 @@ class AreaCasa {
         float areas;
         float areat;
 
-        if (lateral < 0)
+        if (lateral >=0 && cquarto >=0){
 
-            System.out.println("Erro lateral da sala é menor que 0");
-
-        else {
-
-            if (cquarto < 0)
-
-                System.out.println("Erro lateral do quarto menor que 0");
-
-            else {
-
-
-
-                System.out.println("PROGRAMA PARA CASA DA AREA DA CASA RETANGULAR");
+		 	System.out.println("PROGRAMA PARA CASA DA AREA DA CASA RETANGULAR");
 
                 areas = lateral * lateral;
                 System.out.println("Area da sala e:" + areas);
@@ -46,8 +37,17 @@ class AreaCasa {
 
                 areat = areas + 2 * areaq;
                 System.out.println("Area total:" + areat);
+
+             }
+
+        else {
+
+            if (cquarto < 0)
+
+                System.out.println("Erro lateral do quarto menor que 0");
+
+              
             }
-        }
     }
 
 
