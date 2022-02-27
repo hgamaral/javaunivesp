@@ -8,7 +8,8 @@ material que será utilizado para construção da piscina.
 
 
 
-PONTOS DE ATENÇÃO: default é o opcional
+PONTOS DE ATENÇÃO: BREAK quebra e saí do ELEMENTO SWITCH
+RETURN SAi DO MÉTODO
 
 */
 class AreaCasa {
@@ -55,19 +56,15 @@ class AreaCasa {
 		
 		
 	static double valorPiscina(double area, int material){
-			double valor=0;
+			
 			switch (material){
-				case ALVENARIA: valor = 1500;
-								break;
-				case VINIL: valor = 1100;
-								break;
-				case FIBRA: valor = 750;
-								break;
-				case PLASTICO: valor = 500;
-								break;
-				default: valor = -1;
+				case ALVENARIA: return (area*1500);				
+				case VINIL: return (area*1100);
+				case FIBRA: return (area*750);				
+				case PLASTICO: return (area*500);			
+				default: return (-1);
 			}
-			return (area*valor);
+			
 			}
 								
 					
