@@ -2,14 +2,12 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos inserir 4 materiais para construção da piscina.
-Irá ser utilizado o elemento SWITH dentro do NOVO método valorPiscina para análise do 
-material que será utilizado para construção da piscina.
+Nessa parte do nosso programa iremos inserir LAÇOS para comparar o valor de uma
+piscina de 100m quadrados, para cada material usando WHILE
 
 
-
-PONTOS DE ATENÇÃO: BREAK quebra e saí do ELEMENTO SWITCH
-RETURN SAi DO MÉTODO
+PONTOS DE ATENÇÃO: WHILE - TESTA CONDIÇÃO, SE VERDADEIRA EXECUTA O CORPO, SE FALSA, SAI DO WHILE.
+Cada teste do corpo é o que chamamos de ITERAÇÃO;
 
 */
 class AreaCasa {
@@ -99,13 +97,26 @@ class AreaCasa {
         preco = valor(20);
         valorOK = preco >= 0;
 
+		double area = 100;
+		int tipo = ALVENARIA;
+		
+			System.out.println("Material \t Valor");
+				while(tipo <= PLASTICO){
+				 System.out.println(tipo + "\t\t"+ valorPiscina(area,tipo));
+				 tipo = tipo + 1; //SE FOR RETIRADO OCORRE UM LOOP INFINITO PORQUE A VARIAVEL TIPO FICARÁ COM O VALOR DE 0 INFITAMENTE
+		}
+
 
         if (valorOK)
             System.out.println("O valor da construção e " + preco);
         else
             System.out.println("Valor de area negativo");
 		
-		System.out.println("O valor para construção da piscina e: " + valorPiscina(100,3));
+		//System.out.println("O valor para construção da piscina e: " + valorPiscina(100,3));
+
+		
+
+		
 
 
 
