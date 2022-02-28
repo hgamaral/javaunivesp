@@ -2,8 +2,8 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos inserir LAÇOS para comparar o valor de uma
-piscina de 100m quadrados, para cada material usando WHILE
+Nessa parte do nosso programa iremos comparar vários tamanhos de piscina de alvenaria, fixando o material
+A variação da area será em 50/100/200/ metros quadrados
 
 
 PONTOS DE ATENÇÃO: WHILE - TESTA CONDIÇÃO, SE VERDADEIRA EXECUTA O CORPO, SE FALSA, SAI DO WHILE.
@@ -39,13 +39,9 @@ class AreaCasa {
 
         else {
 
-
                 System.out.println("Erro lateral do quarto menor que 0");
-
-              
             }
     }
-
 
 		static final int ALVENARIA = 0;
 		static final int VINIL = 1;
@@ -100,25 +96,26 @@ class AreaCasa {
 		double area = 100;
 		int tipo = ALVENARIA;
 		
-			System.out.println("Material \t Valor");
+		/*	System.out.println("Material \t Valor"); //varia o material
 				while(tipo <= PLASTICO){
 				 System.out.println(tipo + "\t\t"+ valorPiscina(area,tipo));
-				 tipo = tipo + 1; //SE FOR RETIRADO OCORRE UM LOOP INFINITO PORQUE A VARIAVEL TIPO FICARÁ COM O VALOR DE 0 INFITAMENTE
+				 tipo = tipo + 1; //SE FOR RETIRADO OCORRE UM LOOP INFINITO PORQUE A VARIAVEL TIPO FICARa COM O VALOR DE 0 INFITAMENTE
+		}
+		*/
+		
+			System.out.println("Area \t Valor");
+				while(area <= 200){ //varia a area
+				 System.out.println(area + "\t\t"+ valorPiscina(area,ALVENARIA));
+				 area = area+ 50; 
 		}
 
 
         if (valorOK)
-            System.out.println("O valor da construção e " + preco);
+            System.out.println("O valor da construcao e " + preco);
         else
             System.out.println("Valor de area negativo");
 		
 		//System.out.println("O valor para construção da piscina e: " + valorPiscina(100,3));
-
-		
-
-		
-
-
 
     }
 }
