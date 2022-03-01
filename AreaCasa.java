@@ -94,7 +94,7 @@ class AreaCasa {
         valorOK = preco >= 0;
 
 		double area = 100;
-		int tipo = ALVENARIA;
+		int tipo = 0;
 		
 		/*	System.out.println("Material \t Valor"); //varia o material
 				while(tipo <= PLASTICO){
@@ -103,11 +103,24 @@ class AreaCasa {
 		}
 		*/
 		
-			System.out.println("Area \t Valor");
+		/*	System.out.println("Area \t Valor");
 				while(area <= 200){ //varia a area
 				 System.out.println(area + "\t\t"+ valorPiscina(area,ALVENARIA));
 				 area = area+ 50; 
 		}
+		*/
+			System.out.println("Area\tMaterial\tValor");
+				while(area <= 200){ //varia a area
+				tipo = ALVENARIA;
+				while (tipo<=PLASTICO){
+				
+				 System.out.println(area +"\t"+tipo+"\t\t"+ valorPiscina(area,tipo));
+				 tipo = tipo+1; 
+		}
+
+		area = area+50;
+		}
+
 
 
         if (valorOK)
