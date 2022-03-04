@@ -2,14 +2,22 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos comparar vários tamanhos de piscina de alvenaria, fixando o material
-A variação da area será em 50/100/200/ metros quadrados
+Nessa parte do nosso programa iremos usar o LAÇO FOR aninhado para deixar o código MAIS ENXUTO
+mas tanto o laço FOR QUANTO O WHILE são equivalentes, apenas deixa mais visivel para o programador
+um código mais elegante
 
+PONTOS DE ATENÇÃO: SINTAXE: for(inicialização; condição; atualização){
+							comandos
+}
+							
+							inicialização
+							while(condição){
+								comandos;
+								atualização;
+							}
 
-PONTOS DE ATENÇÃO: DO... WHILE faz o teste ANTES de rodar o laço pela primeira vez. O do... while
-faz o teste depois de rodar o laço pela primeira vez. Rodando novamente apenas se o teste for positivo
-O uso depende de quando o teste deve ser feito; Se antes ou depois do corpo do laço rodar uma vez.
 */
+
 class AreaCasa {
 
     static double valorM2 = 1500; //valor do metro quadrado
@@ -96,8 +104,8 @@ class AreaCasa {
         preco = valor(20);
         valorOK = preco >= 0;
 
-        double area = 50;
-        int tipo = ALVENARIA;
+        //double area = 50;
+        //int tipo = ALVENARIA;
 
         /*	System.out.println("Material \t Valor"); //varia o material
         		while(tipo <= PLASTICO){
@@ -110,18 +118,16 @@ class AreaCasa {
         		 area = area+ 50; 
         }
         */
-        System.out.println("Area\tMaterial\tValor");
-        //if(area <= 50){ sempre será verdade visto que a variavel se inicializa com valor 100
-        do {
-            tipo = ALVENARIA;
-            do {
+		
+	 	System.out.println("Area\tMaterial\tValor");
+	    for (double area =50; area <=200; area = area +50){
+			for (int tipo = ALVENARIA;
+						tipo <= PLASTICO;
+						tipo = tipo+1){
 
                 System.out.println(area + "\t" + tipo + "\t\t" + valorPiscina(area, tipo));
-                tipo = tipo + 1;
-            } while (tipo <= PLASTICO);
-
-            area = area + 50;
-        } while (area <= 200);
+            }  
+        } 
 
 
         if (valorOK)
