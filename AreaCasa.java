@@ -2,26 +2,24 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos usar EXRPESSÕES CONTRAIDAS, que são bastante uteis para realizar
-a operação e armazenar o resultado na mesma variavel.
+Nessa parte do nosso programa iremos usar ARRANJOS (ARRAY) - estrutura de dados, de tamanho fixo, que permitem armazenar um conjunto de valores de um mesmo tipo
 
-PONTOS DE ATENÇÃO: SINTAXE: x = x + 5 EQUIVALE a x + = 5 - LEIA X RECEBE = X MAIS 5
-PRE INCREMETO E POS INCREMENTO
-LAÇOS - INICIALIZAÇÃO, CONDIÇÃO E ATUALIZAÇÃO SÃO OPCIONAIS
-A CONDIÇÃO ACEITA QUALQUER EXPRESSÃO QUE RESULTE EM VERDADEIRO OU FALSO (EXPRESSÕES LÓGICAS E RELACIONAIS). INICIALIZAÇÃO E ATUALIZAÇÃO SÃO APENAS CÓDIGOS RODADOS, RESPECTIVAMENTE, NO INICIO E NO FIM DO LAÇO.
+PONTOS DE ATENÇÃO: SINTAXE
+static double[]precos = {1500,1100,750,500}; LEIA-SE preço é um arranjo de double
+static double precos[] = {1500,1100,750,500};
+
+PONTO CHAVE - CONCEITO DE VARIAVEL - SÃO NO CASO O MAPEAMENTO FEITO PELO COMPILADOR A ESSE ENDEREÇO
+QUE NO CASO SÃO OS PONTOS DE ALOCAÇÃO FEITOS EM HEXADECIMAL
+
 }
 							
-							inicialização
-							while(condição){
-								comandos;
-								atualização;
-							}
 
 */
 
 class AreaCasa {
 
     static double valorM2 = 1500; //valor do metro quadrado
+    static double precos[] = {1500,1100,750,500}; //arranjo de double contém 5 posições 
 
 
     static void areaCasa(float lateral, float cquarto) { //método com dois argumentos
@@ -58,20 +56,12 @@ class AreaCasa {
 
     static double valorPiscina(double area, int material) {
 
-        switch (material) {
-            case ALVENARIA:
-                return (area * 1500);
-            case VINIL:
-                return (area * 1100);
-            case FIBRA:
-                return (area * 750);
-            case PLASTICO:
-                return (area * 500);
-            default:
-                return (-1);
-        }
-
+        if (material < ALVENARIA || material > PLASTICO || area < 0) //testa condições
+            return (-1);
+        		return (area * precos[material]); //substitui o switch case de uso
     }
+
+
 
 
 
@@ -119,16 +109,14 @@ class AreaCasa {
         		 area = area+ 50; 
         }
         */
-		
-	 	System.out.println("Area\tMaterial\tValor");
-	    for (double area =50; area <=200; area = area +50){
-			for (int tipo = ALVENARIA;
-						tipo <= PLASTICO;
-						tipo = tipo+1){
+
+        System.out.println("Area\tMaterial\tValor");
+        for (double area = 50; area <= 200; area = area + 50) {
+            for (int tipo = ALVENARIA; tipo <= PLASTICO; tipo = tipo + 1) {
 
                 System.out.println(area + "\t" + tipo + "\t\t" + valorPiscina(area, tipo));
-            }  
-        } 
+            }
+        }
 
 
         if (valorOK)
