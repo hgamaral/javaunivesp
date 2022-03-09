@@ -2,12 +2,13 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos usar o LAÇO FOR aninhado para deixar o código MAIS ENXUTO
-mas tanto o laço FOR QUANTO O WHILE são equivalentes, apenas deixa mais visivel para o programador
-um código mais elegante
+Nessa parte do nosso programa iremos usar EXRPESSÕES CONTRAIDAS, que são bastante uteis para realizar
+a operação e armazenar o resultado na mesma variavel.
 
-PONTOS DE ATENÇÃO: SINTAXE: for(inicialização; condição; atualização){
-							comandos
+PONTOS DE ATENÇÃO: SINTAXE: x = x + 5 EQUIVALE a x + = 5 - LEIA X RECEBE = X MAIS 5
+PRE INCREMETO E POS INCREMENTO
+LAÇOS - INICIALIZAÇÃO, CONDIÇÃO E ATUALIZAÇÃO SÃO OPCIONAIS
+A CONDIÇÃO ACEITA QUALQUER EXPRESSÃO QUE RESULTE EM VERDADEIRO OU FALSO (EXPRESSÕES LÓGICAS E RELACIONAIS). INICIALIZAÇÃO E ATUALIZAÇÃO SÃO APENAS CÓDIGOS RODADOS, RESPECTIVAMENTE, NO INICIO E NO FIM DO LAÇO.
 }
 							
 							inicialização
