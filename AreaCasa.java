@@ -2,17 +2,11 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos usar ARRANJOS (ARRAY) - estrutura de dados, de tamanho fixo, que permitem armazenar um conjunto de valores de um mesmo tipo
+Nessa parte do nosso programa iremos usar um metodo para calcular a média dos preços dos materiais.
+Para isso iremos utilizar um arranjo (interando um item de cada vez).
 
-PONTOS DE ATENÇÃO: SINTAXE
-static double[]precos = {1500,1100,750,500}; LEIA-SE preço é um arranjo de double
-static double precos[] = {1500,1100,750,500};
-
-PONTO CHAVE - CONCEITO DE VARIAVEL - SÃO NO CASO O MAPEAMENTO FEITO PELO COMPILADOR A ESSE ENDEREÇO
-QUE NO CASO SÃO OS PONTOS DE ALOCAÇÃO FEITOS EM HEXADECIMAL
-
-}
-							
+Passagem de parametros: por valor - o conteudo de uma determinada regiao da memoria e copiada para outra
+por referencia - o conteudo de uma determinada regiao da memoria é copiado para outra
 
 */
 
@@ -78,11 +72,20 @@ class AreaCasa {
         return (-1);
 
     }
+	
+	static double media(double[] arranjo) { 	//metodo resposta que recebe como parametro um arranjo
+		double resp = 0;						//inicia com 0
+			 for (double valor: arranjo){
+				 resp += valor;					//intera cada valor ou seja 0 + primeiro número e divide pelo tamanho do arranjo e assim por diante
+			 }
+        return(resp/arranjo.length);
+
+    }
 
     public static void main(String[] args) {
 
         double areap;
-
+		
         areaCasa(11, 7);
 
         double preco;
@@ -113,18 +116,12 @@ class AreaCasa {
         System.out.println("Area\tMaterial\tValor");
         for (double area = 50; area <= 200; area = area + 50) {
             for (int tipo = ALVENARIA; tipo <= PLASTICO; tipo = tipo + 1) {
-
                 System.out.println(area + "\t" + tipo + "\t\t" + valorPiscina(area, tipo));
             }
         }
+		
+		System.out.println("A media do preço dos materiais e:" + media(precos));
 
-
-        if (valorOK)
-            System.out.println("O valor da construcao e " + preco);
-        else
-            System.out.println("Valor de area negativo");
-
-        //System.out.println("O valor para construção da piscina e: " + valorPiscina(100,3));
-
+	
     }
 }
