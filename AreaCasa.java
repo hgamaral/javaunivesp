@@ -13,8 +13,8 @@ por referencia - o conteudo de uma determinada regiao da memoria é copiado para
 class AreaCasa {
 
     static double valorM2 = 1500; //valor do metro quadrado
-    static double precos[] = {1500,1100,750,500}; //arranjo de double contém 5 posições 
-
+    static double precos[] = {1500,1100,750,500}; //arranjo de double contém 4 posições 
+	
 
     static void areaCasa(float lateral, float cquarto) { //método com dois argumentos
 
@@ -56,9 +56,6 @@ class AreaCasa {
     }
 
 
-
-
-
     static double areaPiscina(double raio) { //criaco do metodo, com retorno tipo double raio
         double resp; //criacao da variavel resp do tipo double para verificar a condicao 		
         resp = (raio >= 0) ? Math.PI * Math.pow(raio, 2) : -1;
@@ -81,10 +78,20 @@ class AreaCasa {
         return(resp/arranjo.length);
 
     }
+	//Carrega os valores das piscinas na matriz por materil
+	public static void carregaVal(double[][] m){
+		for (int i= 0; i<m.length; i++){ //linhas (material)
+			for(int j=50; j<=200; j+=50){ //colunas (áreas)
+				m[i][j/50 - 1] = precos[i] * j;
+				}
+			}
+		}
 
     public static void main(String[] args) {
 
         double areap;
+		double [][] valores = new double [4][4];
+		
 		
         areaCasa(11, 7);
 
@@ -113,15 +120,26 @@ class AreaCasa {
         }
         */
 
-        System.out.println("Area\tMaterial\tValor");
+        /*System.out.println("Area\tMaterial\tValor");
         for (double area = 50; area <= 200; area = area + 50) {
             for (int tipo = ALVENARIA; tipo <= PLASTICO; tipo = tipo + 1) {
                 System.out.println(area + "\t" + tipo + "\t\t" + valorPiscina(area, tipo));
             }
         }
 		
+		*/
+		
 		System.out.println("A media do preço dos materiais e:" + media(precos));
-
+		
+		carregaVal(valores);
+		
+		for (int i=0; i<valores.length; i++){
+			for (int j=0; j<valores[i].length; j++)
+				System.out.println(valores[i][j]+ " ");
+			System.out.println();
+		}
+		
+		System.out.println("Pisina de plastico de 150m2: " +valores[PLASTICO][2]);
 	
     }
 }
