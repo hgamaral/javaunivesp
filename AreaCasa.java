@@ -2,12 +2,9 @@
 
 Programa para calcular a area de uma casa (e seu cômodos) juntamente com a piscina
 
-Nessa parte do nosso programa iremos usar um metodo para calcular a média dos preços dos materiais.
-Para isso iremos utilizar um arranjo (interando um item de cada vez).
-
-Passagem de parametros: por valor - o conteudo de uma determinada regiao da memoria e copiada para outra
-por referencia - o conteudo de uma determinada regiao da memoria é copiado para outra
-
+Nessa parte do nosso programa iremos usar uma matriz que apresenta desconto nos materiais
+Criação de uma nova matriz que apresente os descontos para cada material
+pFinal[i][j] = preco[i][j] * (1-desconto[i][j]);
 */
 
 class AreaCasa {
@@ -37,22 +34,53 @@ class AreaCasa {
 				}
 			}
 		}
+		
+	/* Retorna matriz com os precos finais.
+		Parametros:
+			val - matriz de valores;
+			desc - matriz de descontos
+			saida - matriz de resposta
+	*/
+	
+	public static double [][] calculaFinal(double [][] val, double [][]desc){
+		double [][] saida = new double[val.length][val[0].length];
+			for (int i=0; i<saida.length; i++){
+				for (int j=0; j<saida[0].length;j++){
+					saida[i][j] = val[i][j]*(1-desc[i][j]);				
+				}
+			}
+		return (saida);
+	}
 
     public static void main(String[] args) {
 
 		double [][] valores = new double [4][4];
-
-		System.out.println("A media do preço dos materiais e:" + media(precos));
+		double [][] descontos = {{0,0,0.2,0.2},
+								{0.05,0.05,0.1,0.15},
+								{0.02,0.04,0.08,0.16},
+								{0,0,0,0.05}};
+		double [][] pFinal;
 		
 		carregaVal(valores);
 		
+		pFinal = calculaFinal(valores, descontos); //matriz marzenada
+		
+		
+		carregaVal(valores);
+		System.out.println("A media do preço dos materiais e:" + media(precos));
+		
+		//for com matriz valores para vizualização de valores
 		for (int i=0; i<valores.length; i++){
 			for (int j=0; j<valores[i].length; j++)
 				System.out.println(valores[i][j]+ " ");
 			System.out.println();
 		}
 		
-		System.out.println("Pisina de plastico de 150m2: " +valores[PLASTICO][2]);
-	
+		//for pFinal para valores com desconto
+		for (int i=0; i<pFinal.length; i++){
+			for (int j=0; j<pFinal[i].length; j++)
+				System.out.println(pFinal[i][j]+ " ");
+			System.out.println();
+		}
     }
 }
