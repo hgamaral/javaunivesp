@@ -1,21 +1,26 @@
 /*
-Calcula a área de uma casa com piscina
-sintaxe para chamara o metodo da AreaCasa -- insere NomedaClasse.metodo(argumentos)
+Memoria com mais de um objeto
 
-Area da casa mais area da piscina
+
 */
 
 class Projeto {	
 	static double area(double lateral, double cquarto, double raio){
 		return(AreaCasa.area(lateral,cquarto) + AreaPiscina.areaPiscina(raio));
 	}
+
+	public static void main (String[] args) {
+		//Cria-se um objeto, que é uma instancia da Classe AreaCasa
+		AreaCasa casa1 = new AreaCasa();
+		AreaCasa casa2 = new AreaCasa();
+		
+		casa2.valorM2 = 1270; //mudança do valor do M2 para o objeto casa2
 	
-	public static void main (String[] args) {	
-	
-	System.out.println(area(11.0,7.0,2.0)); 
+		System.out.println(casa1.valor(casa1.area(15,10))); 
+		System.out.println(casa2.valor(casa1.area(18,8)));
+		
+		System.out.println(area(11.0,7.0,2.0)); 
 	}
 }
 
-//Quando executo minha classe projeto é alocado um espaço de memoria pra ela
-//com os argumentos que vem do metodo main... chamamos o metodo area com 3 argumentos
-//Execucao do metodo area de AreaCasa dentro do metodo main da classe Projeto
+
