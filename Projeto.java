@@ -1,33 +1,64 @@
 /*
-Construtores - são metodos chamados na criação dos objeto
-eles podem atribuir valores pros atributos de um objeto quanto 
-executar qualquer metodo durante a inicialização desses objetos.
-AreaCasa casa1 = new AreaCasa(); -- exemplo de construtor padrão
-
-Construtores pode ter um quantidade variade de parametros
-e pode executar qualquer codigo dentro dele. É bom para
-atribuir valores para os atributos, evitando esquecimentos out
-seja objeto criou se necessário já modifica
+Arranjos de objetos, agora nosso projeto envolve um condominio de residências
+Cada uma com uma casa e uma piscina
+Criaremos uma nova classe Residencia
 
 */
 
 class Projeto {	
-	static double area(double lateral, double cquarto, double raio){
-		return(AreaCasa.area(lateral,cquarto) + AreaPiscina.areaPiscina(raio));
+	Residencia[] condominio; //arranjo de objetos no caso arranjo de enderecos da memoria
+	int ultimo = -1; //ultimo alocado
+	
+	boolean adicionaRes(Residencia r){
+		if(this.ultimo < this.condominio.length-1){
+			ultimo++;
+			this.condominio[ultimo] = r;
+			return(true);
+		}
+		return (false);
+	}
+	
+	Projeto(int tam){
+		condominio = new Residencia[tam];
 	}
 
+
+	static double area(AreaCasa casa, AreaPiscina piscina){
+		return(casa.area() + piscina.area());
+	}
+	
+	
 	public static void main (String[] args) {
 		//Cria-se um objeto, que é uma instancia da Classe AreaCasa
-		AreaCasa casa1 = new AreaCasa();
-		AreaCasa casa2 = new AreaCasa(1270);
-	
-		System.out.println(casa1.valor(casa1.area(15,10))); 
-		System.out.println(casa2.valor(casa1.area(18,8)));
+		AreaCasa casaPrinc1 = new AreaCasa(10,5); // 150
+		AreaCasa casaPrinc2 = new AreaCasa(20,5); 
 		
-		System.out.println();
-		System.out.println("area da casa mais piscina");
-		System.out.println(area(11.0,7.0,2.0)); 
+		AreaPiscina piscina1 = new AreaPiscina(10);// PI * (10 elevado 2)  = 314
+	
+		System.out.println(area(casaPrinc1, piscina1));
+		
+		/*Projeto proj = new Projeto(3);
+		AreaCasa c = new AreaCasa(10,5);
+		AreaPiscina p = new AreaPiscina(5);
+		Residencia r = new Residencia(c,p);
+		proj.adicionaRes(r);
+		
+		c = new AreaCasa(12,7);
+		p = new AreaPiscina(6);
+		r = new Residencia(c,p);
+		proj.adicionaRes(r);
+		
+		c = new AreaCasa(10,6);
+		p = new AreaPiscina(3.5);
+		r = new Residencia(c,p);
+		proj.adicionaRes(r);
+		*/
+		
+		Projeto proj = new Projeto(3);
+		for(Residencia re : proj.condominio){
+			System.out.println("Endereco do objeto: " +re);
+		}
+			
 	}
 }
-
 
